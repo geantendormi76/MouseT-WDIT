@@ -16,42 +16,47 @@
 
 ---
 
-### ⚔️ 降维打击：为什么 MouseT 能做到 97% 通过率？
+### ⚔️ 核心技术：微观指纹对抗 (Micro-Behavioral Fingerprinting)
 
-#### 1. 真正的“生物纹理” (Micro-Tremor)
-传统脚本生成的轨迹在微观上是光滑的，而人类的手部肌肉在移动时会有极其微小的生理颤动（Tremor）。
-MouseT 完美复刻了这种 **微观频域特征**。在风控系统的 AI 眼中，MouseT 就是一个有血有肉的人。
+反作弊系统的核心是检测 **Jerk (加加速度)** 的分布。机器生成的轨迹通常过于平滑或具有规律性的抖动，而人类的轨迹充满了基于肌肉生理学的随机噪声。
 
-![微观纹理对比](docs/images/comparative_report_cn.png)
+#### 📊 三方 Jerk 指纹对比实验
+
+| 方案 | Jerk 分布特征 | 评价 |
+| :--- | :--- | :--- |
+| **Ghost Cursor** | ![Ghost](docs/images/analysis_jerk_ghost_cursor.png) <br> **特征：** 极度平滑，缺乏高频分量，典型的“机器人指纹”。 | ❌ **秒封** |
+| **真人 (Human)** | ![Human](docs/images/analysis_jerk_human_dataset.png) <br> **特征：** 长尾分布，包含丰富的生理震颤 (Micro-Tremor)。 | ✅ **基准** |
+| **MouseT (本产品)** | ![MouseT](docs/images/analysis_jerk_mouset_wdit.png) <br> **特征：** 完美复刻真人的长尾分布与震颤频率。 | ✅ **通过** |
+
+> **结论：** MouseT 是唯一能在微观频域上欺骗 AI 风控模型的方案。
+
+---
+
+### 🧬 更多硬核评测
+
+#### 1. 真正的“生物纹理”
+MouseT 完美复刻了人类手部肌肉移动时的微小生理颤动。
+
+![微观纹理对比](docs/images/micro_tremor_comparison.png)
 *上图：MouseT (蓝) 完美复刻了真人 (灰) 的速度波动，而传统算法则是死板的线条。*
 
 #### 2. 图灵测试级的分布 (t-SNE Manifold)
-我们将 MouseT 生成的轨迹与真人轨迹映射到二维流形空间。
-*   🔴 **传统脚本**：聚集在特定区域，特征单一，易被聚类封杀。
-*   🟢 **真人轨迹**：分布广泛，充满随机性。
-*   🔵 **MouseT**：**与真人分布高度重合，完全覆盖人类行为空间。**
+我们将 MouseT 生成的轨迹与真人轨迹映射到二维流形空间。MouseT 与真人分布高度重合，完全覆盖人类行为空间。
 
-![t-SNE分布图](docs/images/professional_battle_tsne.png)
+![t-SNE分布图](docs/images/tsne_manifold_projection.png)
 
 #### 3. 碾压级的实测数据
 我们在主流高对抗环境下进行了 500 次连续测试（Akamai/Cloudflare 环境）：
 
-| 方案 | 技术原理 | 通过率 (Pass Rate) | 评价 |
-| :--- | :--- | :--- | :--- |
-| **Linear** | 直线移动 | 21.0% | 秒封 |
-| **Ghost Cursor** | 贝塞尔曲线 | 14.4% | 特征明显，指纹库已拉黑 |
-| **PHC** | 数学统计模型 | 20.4% | 缺乏熵值，易被行为分析 |
-| **MouseT** | **Wavelet DiT AI** | **97.0%** | **S 级拟人 (无法区分)** |
-
-![通过率柱状图](docs/images/pass_rate_final.png)
+![通过率柱状图](docs/images/pass_rate_bar_chart.png)
 
 ---
 
 ### 📊 全维度评测 (Benchmark Radar)
 
-我们在 **拟人度 (Human-Likeness)**、**通过率 (Pass Rate)**、**轨迹熵值 (Entropy)** 等多个维度进行了综合对比。MouseT 在各项指标上均大幅领先传统方案。
+我们在 **拟人度 (Human-Likeness)**、**通过率 (Pass Rate)**、**轨迹熵值 (Entropy)** 等多个维度进行了综合对比。
 
-![雷达对比图](docs/images/benchmark_radar_marketing.png)
+![雷达对比图](docs/images/benchmark_radar.png)
 
 ---
 
@@ -76,7 +81,7 @@ MouseT 完美复刻了这种 **微观频域特征**。在风控系统的 AI 眼�
 
 请添加联系方式，备注 **"MouseT内测"**：
 
-*   **VX**: `geantendormi`
+*   **WeChat**: `geantendormi`
 *   **QQ**: `524843854`
 
 > **MouseT —— 给你的自动化程序注入灵魂。**

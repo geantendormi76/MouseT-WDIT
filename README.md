@@ -1,7 +1,7 @@
-<div align="center">
-
 # MouseT: Generative AI Trajectory Engine
 ### 基于小波扩散变换器 (WDIT) 的下一代人机交互模拟引擎
+
+<div align="center">
 
 [![Version](https://img.shields.io/badge/Version-4.3.0_Enterprise-blue?style=for-the-badge&logo=python)](https://github.com/your-repo)
 [![Architecture](https://img.shields.io/badge/Arch-Wavelet_Diffusion_Transformer-purple?style=for-the-badge&logo=pytorch)](https://arxiv.org/)
@@ -58,6 +58,11 @@ MouseT 基于 2025 年最新的 **双流小波扩散 (Dual-Stream Wavelet DiT)**
 
 ## 📈 工业级实测数据
 
+### 🎥 动态演示：MouseT 实战效果
+> **眼见为实**：点击下方按钮跳转 Bilibili 观看 MouseT 在真实业务场景下的实时生成效果。
+
+[![Bilibili](https://img.shields.io/badge/Bilibili-%E8%A7%82%E7%9C%8B%E6%BC%94%E7%A4%BA%E8%A7%86%E9%A2%91-fb7299?style=for-the-badge&logo=bilibili&logoColor=white)](https://www.bilibili.com/video/BV1BkSEBgE4U/?vd_source=71afea7ff8f21d1d522aa5eb717e2aeb)
+
 ### 1. 真正的“生物纹理”
 MouseT 完美复刻了人类手部肌肉移动时的微小生理颤动。注意下图蓝色曲线（MouseT）与灰色曲线（真人）在速度波动上的高度一致性。
 
@@ -111,7 +116,7 @@ MouseT 完美复刻了人类手部肌肉移动时的微小生理颤动。注意�
 
 请添加联系方式，备注 **"MouseT内测"** 或 **"模型定制"**：
 
-*   **VX**: `geantendormi`
+*   **微信**: `geantendormi`
 *   **QQ**: `524843854`
 
 ---
